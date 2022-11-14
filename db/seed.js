@@ -1,6 +1,6 @@
 const db = require('./connection.js');
 const format = require('pg-format');
-const { createSpeciesRef, formatCatsData } = require('../utils.js');
+const { createSpeciesRef, formatCatsData } = require('../utils/seed.js');
 
 const seed = (catData, speciesData) => {
   // Drop tables
