@@ -51,8 +51,6 @@ const seed = (catData, speciesData) => {
     .then((speciesInsertionResult) => {
       const speciesRows = speciesInsertionResult.rows;
       const speciesRef = createSpeciesRef(speciesRows);
-      console.log(speciesRef);
-      console.log(catData);
       const formattedCats = catData.map((cat) => [
         speciesRef[cat.species],
         cat.cat_name,
