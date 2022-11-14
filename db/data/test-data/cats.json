@@ -1,0 +1,20 @@
+[
+  {
+    "cat_name": "Bolin",
+    "cuteness": 10,
+    "colour": "black",
+    "species": "domestic"
+  },
+  {
+    "cat_name": "Grumpy Cat",
+    "cuteness": 9,
+    "colour": "calico",
+    "species": "domestic"
+  },
+  {
+    "cat_name": "Tigger",
+    "cuteness": 6,
+    "colour": "ginger",
+    "species": "tiger"
+  }
+]
