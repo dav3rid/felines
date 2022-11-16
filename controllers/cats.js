@@ -10,3 +10,8 @@ exports.getCatsBySpeciesId = (req, res, next) => {
       next(err);
     });
 };
+
+exports.getCats = (something, somethingElse) => {
+  console.log('random stuff going on here')
+  more breaking code
+}
