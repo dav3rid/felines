@@ -19,3 +19,16 @@ exports.fetchCatsBySpeciesId = (species_id) => {
       return res.rows;
     });
 };
+
+exports.fetchCats = () => {
+  return db
+    .query(
+      `
+    SELECT * FROM cats
+    ORDER BY cuteness DESC;
+  `
+    )
+    .then((result) => {
+      return result.rows;
+    });
+};
