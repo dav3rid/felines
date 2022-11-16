@@ -25,7 +25,7 @@ describe('/api/species/:species_id/cats', () => {
             species_id: 1,
             cat_name: expect.any(String),
             cuteness: expect.any(Number),
-            colour: expect.any(String)
+            colour: expect.any(String),
           });
         });
       });
@@ -47,4 +47,43 @@ describe('/api/species/:species_id/cats', () => {
         expect(body.msg).toBe('species not found!');
       });
   });
+});
+
+describe('/api/cats', () => {
+  test('GET: 200 - responds with array of cats - sorted by cuteness descending', () => {
+    return request(app)
+      .get('/api/cats')
+      .expect(200)
+      .then(({ body }) => {
+        const cats = body.cats;
+        console.log(cats);
+        expect(cats).toBeSorted('cuteness', { descending: true });
+      });
+  });
+});
+
+test.only('testing jest sorted', () => {
+  const testArray = [
+    {
+      cat_name: 'Bolin',
+      cuteness: 10,
+      colour: 'black',
+      species: 'domestic',
+    },
+    {
+      cat_name: 'Tigger',
+      cuteness: 6,
+      colour: 'ginger',
+      species: 'tiger',
+    },
+    {
+      cat_name: 'Grumpy Cat',
+      cuteness: 9,
+      colour: 'calico',
+      species: 'domestic',
+    },
+  ];
+
+  // expect(testArray).toBeSorted({ key: 'cat_name' });
+  expect(testArray).toBeSortedBy('cat_name', { descending: true });
 });

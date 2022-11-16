@@ -1,9 +1,11 @@
 const express = require('express');
-const { getCatsBySpeciesId } = require('./controllers/cats');
+const { getCatsBySpeciesId, getCats } = require('./controllers/cats');
 
 const app = express();
 
 app.get('/api/species/:species_id/cats', getCatsBySpeciesId);
+
+app.get('/api/cats', getCats);
 
 app.use((err, req, res, next) => {
   // check the error is one of my custom ones
